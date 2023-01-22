@@ -1,19 +1,11 @@
-//
-//  New York Newss.swift
-//  App Noticias
-//
-//  Created by Rogério Júnior on 18/01/23.
-//
-
 import Foundation
 
-// MARK: -NewYorkNews
-struct NewYorkNews: Codable {
-
+// MARK: - Welcome
+struct ResponseNews: Codable {
     let status, copyright: String
     let numResults: Int
-    let results:[ResultNews]
-    
+    let results: [ResultNews]
+
     enum CodingKeys: String, CodingKey {
         case status, copyright
         case numResults = "num_results"
@@ -21,14 +13,11 @@ struct NewYorkNews: Codable {
     }
 }
 
-
-
-//MARK: - ResultNews
-
+// MARK: - Result
 struct ResultNews: Codable {
     let uri: String
     let url: String
-    let id, assetId: Int
+    let id, assetID: Int
     let source: Source
     let publishedDate, updated, section, subsection: String
     let nytdsection, adxKeywords: String
@@ -39,10 +28,10 @@ struct ResultNews: Codable {
     let desFacet, orgFacet, perFacet, geoFacet: [String]
     let media: [Media]
     let etaID: Int
-        
+
     enum CodingKeys: String, CodingKey {
         case uri, url, id
-        case assetId = "asset_id"
+        case assetID = "asset_id"
         case source
         case publishedDate = "published_date"
         case updated, section, subsection, nytdsection
@@ -57,9 +46,6 @@ struct ResultNews: Codable {
     }
 }
 
-
-
-
 // MARK: - Media
 struct Media: Codable {
     let type: MediaType
@@ -67,22 +53,22 @@ struct Media: Codable {
     let caption, copyright: String
     let approvedForSyndication: Int
     let mediaMetadata: [MediaMetadatum]
-    
-    enum CodingKeys : String, CodingKey {
+
+    enum CodingKeys: String, CodingKey {
         case type, subtype, caption, copyright
         case approvedForSyndication = "approved_for_syndication"
         case mediaMetadata = "media-metadata"
     }
 }
 
-//MARK: - MediaMetadatatum
+// MARK: - MediaMetadatum
 struct MediaMetadatum: Codable {
     let url: String
     let format: Format
     let height, width: Int
 }
 
-enum Format: String, Codable{
+enum Format: String, Codable {
     case mediumThreeByTwo210 = "mediumThreeByTwo210"
     case mediumThreeByTwo440 = "mediumThreeByTwo440"
     case standardThumbnail = "Standard Thumbnail"
@@ -91,8 +77,9 @@ enum Format: String, Codable{
 enum Subtype: String, Codable {
     case photo = "photo"
 }
+
 enum MediaType: String, Codable {
-    case images = "image"
+    case image = "image"
 }
 
 enum Source: String, Codable {

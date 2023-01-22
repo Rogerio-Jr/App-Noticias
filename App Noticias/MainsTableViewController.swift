@@ -21,7 +21,7 @@ class ViewController: UITableViewController {
         let jsonData = try! Data(contentsOf: fileUrl)
         
         do {
-            let data = try JSONDecoder().decode(NewYorkNews.self, from: jsonData)
+            let data = try JSONDecoder().decode(ResponseNews.self, from: jsonData)
 
               news = data.results
         }catch{
@@ -37,8 +37,10 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt
                             indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = news[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NewYorkTableViewCell
+        
+        let newsData = news[indexPath.row]
+        cell.prepare(with: newsData)
         
         return cell
     }
@@ -47,4 +49,3 @@ class ViewController: UITableViewController {
          print(indexPath.row)
     }
 }
-
