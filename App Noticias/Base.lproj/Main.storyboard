@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Lista-->
+        <!--News do Rogério-->
         <scene sceneID="vdF-Le-fln">
             <objects>
                 <tableViewController id="GvU-9u-YyW" customClass="ViewController" customModule="App_Noticias" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="300" id="yHQ-zi-kTN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="300" id="yHQ-zi-kTN" customClass="NewYorkTableViewCell" customModule="App_Noticias" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="300"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yHQ-zi-kTN" id="GZK-eG-uyJ">
@@ -33,20 +33,20 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xXC-P2-mb1">
-                                            <rect key="frame" x="9" y="65" width="373" height="214"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="By Ed Shanahan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="c0s-l1-dHP">
-                                            <rect key="frame" x="19" y="279" width="363" height="18"/>
+                                            <rect key="frame" x="19" y="279" width="363" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xXC-P2-mb1">
+                                            <rect key="frame" x="9" y="60" width="373" height="214"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="c0s-l1-dHP" firstAttribute="trailing" secondItem="2VB-4y-Tm9" secondAttribute="trailing" id="0rd-tf-zgS"/>
                                         <constraint firstItem="c0s-l1-dHP" firstAttribute="leading" secondItem="2VB-4y-Tm9" secondAttribute="leading" id="9mL-9P-CvU"/>
-                                        <constraint firstAttribute="bottom" secondItem="c0s-l1-dHP" secondAttribute="bottom" constant="3" id="Fxq-2J-X7H"/>
+                                        <constraint firstAttribute="bottom" secondItem="c0s-l1-dHP" secondAttribute="bottom" constant="10" id="Fxq-2J-X7H"/>
                                         <constraint firstAttribute="trailing" secondItem="2VB-4y-Tm9" secondAttribute="trailing" constant="10" id="Fz2-kk-9Eg"/>
                                         <constraint firstItem="xXC-P2-mb1" firstAttribute="top" secondItem="2VB-4y-Tm9" secondAttribute="bottom" constant="10" id="MhO-NN-N8c"/>
                                         <constraint firstItem="2VB-4y-Tm9" firstAttribute="leading" secondItem="GZK-eG-uyJ" secondAttribute="leading" constant="10" id="Njl-3n-0J4"/>
@@ -56,6 +56,11 @@
                                         <constraint firstItem="xXC-P2-mb1" firstAttribute="bottom" secondItem="c0s-l1-dHP" secondAttribute="top" constant="-10" id="vXe-Qb-fQS"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="by" destination="c0s-l1-dHP" id="yyn-av-RDW"/>
+                                    <outlet property="imageNews" destination="xXC-P2-mb1" id="4tX-LK-Eng"/>
+                                    <outlet property="title" destination="2VB-4y-Tm9" id="4Vx-0o-uV3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -63,7 +68,7 @@
                             <outlet property="delegate" destination="GvU-9u-YyW" id="yKH-cC-tdx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Lista" id="JBj-27-l7t"/>
+                    <navigationItem key="navigationItem" title="News do Rogério" id="JBj-27-l7t"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T79-DJ-Dlj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -46,6 +46,8 @@ class ViewController: UITableViewController {
     }
         
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         print(indexPath.row)
+        if let url = URL(string: news[indexPath.row].url) {
+            UIApplication.shared.open(url)
+        }
     }
 }
