@@ -26,7 +26,7 @@ class ViewController: UITableViewController {
               news = data.results
         }catch{
             print("Error => \(error.localizedDescription)")
-            print("Teste de git")
+
         }
     }
     
